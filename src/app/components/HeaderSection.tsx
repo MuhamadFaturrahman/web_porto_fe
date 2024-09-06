@@ -13,11 +13,15 @@ const HeaderSection = () => {
                     I'm Muhamad Faturrahman
                 </h1>
                 <p className='text-[#FAF8F0] text-lg xl:text-xl'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum impedit repellendus ipsa tempora distinctio, accusantium delectus cum consectetur commodi. Dolore totam vel temporibus ad corrupti tempora ipsa numquam aut recusandae.
+                Highly skilled Information Technology Engineering graduate with a GPA of 3.86, achieving Cum Laude honors from the Garut Institute of Technology. Expertise in mobile and web application development, UI/UX design, and strong proficiency in database management systems. Proven entrepreneurial experience in running a small business focused on graphic design services via social media, demonstrating capabilities in digital marketing and client engagement.
                 </p>
+                <div>
+                    <button className='rounded-md mr-6 my-6 px-6 py-3 border-2 border-[#18A4E0] hover:bg-[#18A4E0] hover:text-white transition duration-300 ease-in-out'>Download CV</button>
+                    <button className='rounded-md mr-6 my-6 px-6 py-3 bg-gradient-to-br from-slate-50 to-[#18A4E0] text-[#033252] hover:from-[#18A4E0] hover:to-[#18A4E0] hover:text-white transition duration-300 ease-in-out'>Contact Me</button>
+                </div>
             </div>
             <div className="col-span-5 place-self-center mt-4 lg:mt-0 py-10 lg:py-0 lg:pl-8">
-                <div className="rounded-full bg-gradient-to-t from-blue-900 to-[#033252] w-[300px] h-[300px] relative ">
+                <div className="rounded-full bg-gradient-to-t from-blue-900 to-[#033252] w-[400px] h-[400px] relative ">
                     <Image
                     src={imgHeader}
                     alt="Logo Just Friday for header"
