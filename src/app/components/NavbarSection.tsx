@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client"
 import Link from 'next/link'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Image from "next/image"
 import imgNavbar from '../assets/logo.png';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'; 
@@ -33,6 +33,22 @@ interface NavLink {
 
 function NavbarSection() {
     const [navbarOpen,setNavbarOpen] = useState(false)
+    useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+          // Close the navbar if screen size is larger than lg (1024px)
+          setNavbarOpen(false);
+        }
+      };
+  
+      // Add event listener
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
     <nav className='fixed top-0 right-0 left-0 z-10 bg-[#033252] bg-opacity-95 drop-shadow-md'>
         <div className='flex flex-wrap items-center justify-between mx-auto py-4 px-10 lg:px-20'>
@@ -73,9 +89,9 @@ function NavbarSection() {
             </ul>
             </div>
         </div>
-        {navbarOpen ? <div className="block lg:hidden">
+        {navbarOpen ? 
           <MenuOverlay links={navLinks}  isOpen={navbarOpen} />
-        </div>
+        
         :null}
 </nav>
   )
