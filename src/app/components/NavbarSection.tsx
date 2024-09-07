@@ -4,9 +4,10 @@ import Link from 'next/link'
 import React, {useState} from 'react'
 import Image from "next/image"
 import imgNavbar from '../assets/logo.png';
-import NavLinks from './Navlinks';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'; 
 import MenuOverlay from './MenuOverlay';
+import NavLinks from './NavLinks';
+
 
 interface NavLink {
     title: string;
@@ -50,11 +51,12 @@ function NavbarSection() {
             <div className="mobile-menu block lg:hidden ">
                 {
                     !navbarOpen ?(
-                        <button onClick={()=>setNavbarOpen(true)} className='flex text-[#FAF8F0] items-center px-3 hover:text-[#18A4E0]'>
+                        <button onClick={()=>setNavbarOpen(true)} className='flex text-[#FAF8F0] items-center px-3 hover:text-[#18A4E0] hover:ease-in-out duration-300'>
                             <Bars3Icon className='h-8 w-8'/>
                         </button>
+                        
                     ):(
-                        <button onClick={()=>setNavbarOpen(false)} className='flex text-[#FAF8F0] items-center px-3 hover:text-[#18A4E0]'>
+                        <button onClick={()=>setNavbarOpen(false)} className='flex text-[#FAF8F0] items-center px-3 hover:text-[#18A4E0] hover:ease-in-out duration-300'>
                             <XMarkIcon className='h-8 w-8'/>
                         </button>
                     )
@@ -71,7 +73,10 @@ function NavbarSection() {
             </ul>
             </div>
         </div>
-        {navbarOpen ? <MenuOverlay links={navLinks} />:null}
+        {navbarOpen ? <div className="block lg:hidden">
+          <MenuOverlay links={navLinks}  isOpen={navbarOpen} />
+        </div>
+        :null}
 </nav>
   )
 }

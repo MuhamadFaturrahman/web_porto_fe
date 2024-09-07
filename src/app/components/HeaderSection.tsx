@@ -11,8 +11,8 @@ const HeaderSection = () => {
     <section className='lg:px-20'>
         <div className="grid grid-cols-1 lg:grid-cols-12 flex-auto">
             <div className="col-span-7 place-self-center lg:pr-8 ">
-                <h2 className="bg-gradient-to-br from-[#054d7d] to-[#18A4E0] inline-block rounded-md  mb-2 px-3 py-2 text-[#FAF8F0] text-xl md:text-2xl  lg:text-4xl font-bold ">Well Hello People!</h2>
-                <h1 className="text-[#FAF8F0] mb-4 text-xl md:text-2xl lg:text-4xl font-extrabold">
+                <h2 className="bg-gradient-to-br from-[#054d7d] to-[#18A4E0] inline-block rounded-md  mb-2 px-3 py-2 text-[#FAF8F0] text-xl lg:text-4xl font-bold ">Well Hello People!</h2>
+                <h1 className="text-[#FAF8F0] mb-4 text-xl  lg:text-4xl font-bold md:font-extrabold">
                     <span>I'm {""}</span>
                     <TypeAnimation
                         sequence={[
