@@ -7,6 +7,7 @@ import imgNavbar from '../assets/logo.png';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'; 
 import MenuOverlay from './MenuOverlay';
 import NavLinks from './NavLinks';
+import {AnimatePresence, motion} from "framer-motion"
 
 
 interface NavLink {
@@ -50,7 +51,7 @@ function NavbarSection() {
       };
     }, []);
   return (
-    <nav className='fixed top-0 right-0 left-0 z-10 bg-[#033252] bg-opacity-95 drop-shadow-md'>
+    <nav className='fixed top-0 right-0 left-0 z-20 bg-[#033252] bg-opacity-95 drop-shadow-md'>
         <div className='flex flex-wrap items-center justify-between mx-auto py-4 px-10 lg:px-20'>
             {/* Logo and Title Section */}
             <Link href={"/"} className='flex text-[#FAF8F0] items-center space-x-4 text-xl font-medium lg:px-10'>
@@ -65,19 +66,38 @@ function NavbarSection() {
             {/* Navigation Links Section */}
             {/* Small Screen Size*/}
             <div className="mobile-menu block lg:hidden ">
-                {
-                    !navbarOpen ?(
-                        <button onClick={()=>setNavbarOpen(true)} className='flex text-[#FAF8F0] items-center px-3 hover:text-[#18A4E0] hover:ease-in-out duration-300'>
-                            <Bars3Icon className='h-8 w-8'/>
-                        </button>
-                        
-                    ):(
-                        <button onClick={()=>setNavbarOpen(false)} className='flex text-[#FAF8F0] items-center px-3 hover:text-[#18A4E0] hover:ease-in-out duration-300'>
-                            <XMarkIcon className='h-8 w-8'/>
-                        </button>
-                    )
-                }
-            </div>
+      <motion.button
+        onClick={() => setNavbarOpen(!navbarOpen)}
+        className='flex text-[#FAF8F0] items-center px-3 hover:text-[#18A4E0] hover:ease-in-out duration-300'
+        initial={{ rotate: 0 }}
+        animate={{ rotate: navbarOpen ? 180 : 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <AnimatePresence mode="wait">
+          {!navbarOpen ? (
+            <motion.div
+              key="bars"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Bars3Icon className="h-8 w-8" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="xmark"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <XMarkIcon className="h-8 w-8" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.button>
+    </div>
             {/* Large Screen Size*/}
             <div className="menu hidden lg:block lg:w-auto lg:px-20" id='navbar'>
             <ul className='flex p-4 lg:p-0 lg:flex-row space-x-8'>
@@ -89,10 +109,19 @@ function NavbarSection() {
             </ul>
             </div>
         </div>
-        {navbarOpen ? 
-          <MenuOverlay links={navLinks}  isOpen={navbarOpen} />
-        
-        :null}
+        <AnimatePresence>
+        {navbarOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1}}
+            exit={{ opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            <MenuOverlay links={navLinks} isOpen={navbarOpen} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+          
 </nav>
   )
 }
