@@ -19,7 +19,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col container mx-auto px-10">
       <NavbarSection />
       <motion.div
-        className="container mt-24 lg:mt-36 py-4"
+        className="container mt-24 lg:mt-36 pt-4 pb-2"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }} // Adjust how much of the section should be in view to trigger animation
@@ -30,7 +30,7 @@ export default function Home() {
 
       {/* Wrapping ExperiencesSection in a motion.div for scroll animation */}
       <motion.div 
-        className="container py-4"
+        className="container py-2"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
