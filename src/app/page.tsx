@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import ExperiencesSection from "./components/ExperiencesSection";
 import HeaderSection from "./components/HeaderSection";
 import NavbarSection from "./components/NavbarSection";
+import SkillsSection from "./components/SkillsSection";
 
 // Framer Motion animation variants for sections
 const sectionVariantsTB = {
@@ -37,6 +38,16 @@ export default function Home() {
         variants={sectionVariantsBT}
       >
         <ExperiencesSection />
+      </motion.div>
+
+      <motion.div 
+        className="container py-2"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariantsBT}
+      >
+        <SkillsSection />
       </motion.div>
     </main>
   );
