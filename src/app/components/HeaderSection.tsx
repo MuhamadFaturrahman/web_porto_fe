@@ -7,6 +7,12 @@ import { TypeAnimation } from 'react-type-animation';
 
 
 const HeaderSection = () => {
+    const handleScroll = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
   return (
     <section>
         <div className="lg:flex lg:flex-row justify-center lg:justify-start space-y-5 lg:space-x-5 lg:px-20">
@@ -37,7 +43,7 @@ const HeaderSection = () => {
                 </p>
                 <div>
                     <button className='rounded-md mr-6 mb-3 lg:mb-6 px-6 py-3 border-2 border-[#18A4E0] hover:bg-[#18A4E0] hover:text-white transition duration-300 ease-in-out w-full sm:w-fit'>Download CV</button>
-                    <button className='rounded-md mr-6 mb-3 lg:mb-6 px-6 py-3 bg-gradient-to-br from-slate-50 to-[#b7ccd5] text-[#033252] font-medium hover:from-[#18A4E0] hover:to-[#18A4E0] hover:text-white transition duration-300 ease-in-out w-full sm:w-fit'>Contact Me</button>
+                    <button onClick={() => handleScroll('contact')} className='rounded-md mr-6 mb-3 lg:mb-6 px-6 py-3 bg-gradient-to-br from-slate-50 to-[#b7ccd5] text-[#033252] font-medium hover:from-[#18A4E0] hover:to-[#18A4E0] hover:text-white transition duration-300 ease-in-out w-full sm:w-fit'>Contact Me</button>
                 </div>
             </div>
             <div className="lg:basis-5/12 mt-4 lg:mt-0 py-10  lg:py-0 lg:pl-8">

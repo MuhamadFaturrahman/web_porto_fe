@@ -33,6 +33,13 @@ interface NavLink {
 
 
 function NavbarSection() {
+    const handleScroll = (e: React.MouseEvent, id: string) => {
+    e.preventDefault(); // Prevent the default anchor behavior
+    const element = document.getElementById(id.slice(1)); // Remove the '#' to get the id
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
     const [navbarOpen,setNavbarOpen] = useState(false)
     useEffect(() => {
       const handleResize = () => {
@@ -54,7 +61,7 @@ function NavbarSection() {
     <nav className='fixed top-0 right-0 left-0 z-20 bg-[#033252] bg-opacity-95 drop-shadow-md'>
         <div className='flex flex-wrap items-center justify-between mx-auto py-4 px-10 lg:px-20'>
             {/* Logo and Title Section */}
-            <Link href={"/"} className='flex text-[#FAF8F0] items-center space-x-4 text-xl font-medium lg:px-10'>
+            <Link href={"/"} scroll={false} onClick={(e) => handleScroll(e, "/")}className='flex text-[#FAF8F0] items-center space-x-4 text-xl font-medium lg:px-10'>
             <div className="rounded-full bg-gradient-to-t from-blue-900 to-[#033252] w-[50px] h-[50px] md:w-[75px] md:h-[75px] relative">
                 <Image
                 src={imgNavbar}
