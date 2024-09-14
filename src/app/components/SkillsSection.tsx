@@ -1,8 +1,31 @@
 /* eslint-disable react/no-unescaped-entities */
-"use client";
+
 import React, { useState } from 'react';
 import SkillsTab from './SkillsTab';
 import { motion } from 'framer-motion';
+import image1 from '../assets/01_pic.jpg';
+import SkillsCard from './SkillsCard';
+
+const CERTIFICATE_DATA = [
+  {
+    id: "cert_1",
+    title: "Card 1",
+    image: image1, // Use image1 directly
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
+  },
+  {
+    id: "cert_2",
+    title: "Card 2",
+    image: image1, // Use image1 directly
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
+  },
+  {
+    id: "cert_3",
+    title: "Card 3",
+    image: image1, // Use image1 directly
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
+  },
+];
 
 const TAB_DATA = [
   {
@@ -32,7 +55,7 @@ const TAB_DATA = [
         <li>Able to Work Effectively in a Team</li>
       </ul>
     ),
-  }
+  },
 ];
 
 function SkillsSection() {
@@ -71,14 +94,14 @@ function SkillsSection() {
                 />
               ))}
               <motion.div
-                className="absolute bottom-0 h-[2px] bg-[#18A4E0] justify-center"
+                className="absolute bottom-0 h-[2px] bg-[#18A4E0]"
                 layout
-                initial={false} // No initial animation
+                initial={false}
                 animate={{
                   x: TAB_DATA.findIndex((tabs) => tabs.id === tab) * 165, // Adjust the x position based on tab index
                   width: '165px', // Adjust the width according to tab size
                 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 30 }} // Spring transition for smooth sliding
+                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               />
             </div>
           </div>
@@ -94,6 +117,11 @@ function SkillsSection() {
           <span className='px-5 font-semibold text-[#FAF8F0] border-b-2 border-[#18A4E0] text-center'>
             Certification
           </span>
+        </div>
+        <div className="flex flex-wrap lg:flex-row gap-4 px-10 justify-center">
+          {CERTIFICATE_DATA.map((data) => (
+            <SkillsCard key={data.id} id={data.id} title={data.title} image={data.image} description={data.description} />
+          ))}
         </div>
       </div>
     </section>
