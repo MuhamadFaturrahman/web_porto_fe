@@ -1,10 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client"
 
 import React, { useState } from 'react';
 import SkillsTab from './SkillsTab';
 import { motion } from 'framer-motion';
 import image1 from '../assets/01_pic.jpg';
 import SkillsCard from './SkillsCard';
+import { Swiper,SwiperSlide } from 'swiper/react';
+import { Pagination } from "swiper/modules";
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 
 const CERTIFICATE_DATA = [
   {
@@ -25,6 +31,7 @@ const CERTIFICATE_DATA = [
     image: image1, // Use image1 directly
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
   },
+  
 ];
 
 const TAB_DATA = [
@@ -98,7 +105,7 @@ function SkillsSection() {
                 layout
                 initial={false}
                 animate={{
-                  x: TAB_DATA.findIndex((tabs) => tabs.id === tab) * 165, // Adjust the x position based on tab index
+                  x: TAB_DATA.findIndex((tabs) => tabs.id === tab) * 160, // Adjust the x position based on tab index
                   width: '165px', // Adjust the width according to tab size
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
@@ -118,11 +125,40 @@ function SkillsSection() {
             Certification
           </span>
         </div>
-        <div className="flex flex-wrap lg:flex-row gap-4 px-10 justify-center">
-          {CERTIFICATE_DATA.map((data) => (
-            <SkillsCard key={data.id} id={data.id} title={data.title} image={data.image} description={data.description} />
-          ))}
-        </div>
+        <Swiper
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            
+          },
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        }}
+        
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        >
+          
+            {CERTIFICATE_DATA.map((data) => (
+              <SwiperSlide key={data.title}>
+                <SkillsCard key={data.id} id={data.id} title={data.title} image={data.image} description={data.description} />
+              </SwiperSlide>
+            ))}
+          
+        </Swiper>
       </div>
     </section>
   );

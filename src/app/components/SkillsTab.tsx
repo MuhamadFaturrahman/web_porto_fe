@@ -8,7 +8,7 @@ interface SkillsTabProps {
 
 const SkillsTab: React.FC<SkillsTabProps> = ({ active, selectTab, label }) => {
   const buttonClasses = active
-    ? 'font-semibold text-[#FAF8F0]'
+    ? 'font-medium md:font-semibold text-[#FAF8F0]'
     : 'text-opacity-75';
     
   return (
