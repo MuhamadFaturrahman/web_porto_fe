@@ -11,7 +11,7 @@ interface CardDetails {
 const SkillsCard: React.FC<CardDetails> = ({ id, title, image, description }) => {
   return (
     
-      <div key={id} className="flex flex-col bg-white group relative bg-opacity-15 rounded-lg shadow-lg p-5 mb-10 mx-1 items-start text-start lg:max-w-sm overflow-hidden cursor-pointer">
+      <div key={id} className="flex flex-col bg-white group relative bg-opacity-15 rounded-lg shadow-lg p-5 mb-10 mx-1 items-start text-start lg:max-w-sm lg:min-h-full overflow-hidden cursor-pointer">
         <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-20" />
         {/* Image Container */}
         <div className="w-full h-full mb-4 rounded-sm flex justify-center items-center">

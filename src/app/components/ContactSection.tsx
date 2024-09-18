@@ -12,9 +12,9 @@ import YoutubeIcon from '../assets/icons/youtube.svg'
 function ContactSection() {
   return (
     <section id='contact'>
-        <div className='bg-neutral-900 py-5'>
-            <div className="flex flex-col px-20 py-5 justify-center items-center gap-5">
-                <h2 className='font-bold text-center text-lg text-[#FAF8F0]'>Let's Connect !</h2>
+        <div className='bg-neutral-900 py-5 lg:px-10'>
+            <div className="flex flex-col px-10 lg:px-20 py-5 justify-center items-center gap-5 lg:gap-10">
+                <h2 className='font-bold text-center text-lg text-[#FAF8F0]'>Get in Touch – Let's Make It Happen!</h2>
                 <div className='flex flex-wrap gap-10 justify-center'>
                     <Link
                     href="https://www.linkedin.com/in/muhamad-faturrahman/"
@@ -77,7 +77,7 @@ function ContactSection() {
                         </div>
                     </Link>
                 </div>
-                <p className='text-center text-[#FAF8F0]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa odit rerum voluptates obcaecati exercitationem mollitia, debitis numquam qui quam sunt, enim excepturi itaque impedit ipsam expedita dolores! Earum, sapiente illum.</p>
+                <p className='lg:text-center text-justify text-[#FAF8F0]'>Whether you're interested in collaborating on a project, discussing ideas, or just want to connect, I'd love to hear from you! You can reach me through any of the platforms above. Simply click on the icons and get in touch with me. Let's make something amazing happen together!</p>
             </div>
         </div>
     </section>

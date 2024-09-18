@@ -17,19 +17,19 @@ const CERTIFICATE_DATA = [
     id: "cert_1",
     title: "ITS Database by Certiport",
     image: image1,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
+    description: "The ITS (Information Technology Specialist) Database certification by Certiport is an international credential that verifies advanced proficiency in database management. It covers key areas such as database design, implementation, and administration.",
   },
   {
     id: "cert_2",
     title: "Junior Graphic Designer by BNSP",
     image: image1,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
+    description: "Junior Graphic Design certification from BNSP (Badan Nasional Sertifikasi Profesi) Indonesia recognizes foundational skills and knowledge in graphic design. It validates competency in visual design, creative processes, and the use of design software and tools.",
   },
   {
     id: "cert_3",
     title: "PTESOL by UPI Language Center",
     image: image1,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
+    description: "The PTESOL (Professional Teaching English to Speakers of Other Languages) certification from UPI Language Center is a national credential that evaluates and certifies one's ability to teach English effectively to non-native speakers.",
   },
   
   
