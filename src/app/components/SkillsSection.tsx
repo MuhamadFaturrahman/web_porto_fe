@@ -15,22 +15,23 @@ import 'swiper/scss/pagination';
 const CERTIFICATE_DATA = [
   {
     id: "cert_1",
-    title: "Card 1",
-    image: image1, // Use image1 directly
+    title: "ITS Database by Certiport",
+    image: image1,
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
   },
   {
     id: "cert_2",
-    title: "Card 2",
-    image: image1, // Use image1 directly
+    title: "Junior Graphic Designer by BNSP",
+    image: image1,
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
   },
   {
     id: "cert_3",
-    title: "Card 3",
-    image: image1, // Use image1 directly
+    title: "PTESOL by UPI Language Center",
+    image: image1,
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sit quis voluptas rerum alias nulla perspiciatis? Soluta eius rerum at consequuntur accusamus, odit obcaecati, earum eligendi, aliquid ipsum explicabo labore?",
   },
+  
   
 ];
 
@@ -130,7 +131,7 @@ function SkillsSection() {
           320: {
             slidesPerView: 1,
             spaceBetween: 10,
-            
+
           },
           640: {
             slidesPerView: 1,
