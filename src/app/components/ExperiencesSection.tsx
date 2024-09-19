@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import ExperiencesDesc from './ExperiencesDesc';
+import ModalComp from './ModalComp';
 
 
 function ExperiencesSection() {
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section id="experiences">
       
@@ -13,9 +16,12 @@ function ExperiencesSection() {
           The Journeys That Makes Me A Person
         </h2>
 
-        <ExperiencesDesc/>
+        <ExperiencesDesc openModal={() => setIsModalOpen(true)}/>
 
       </div>
+      {isModalOpen && (
+        <ModalComp idProps="pic_1" onClose={() => setIsModalOpen(false)} />
+      )}
     </section>
   )
 }
