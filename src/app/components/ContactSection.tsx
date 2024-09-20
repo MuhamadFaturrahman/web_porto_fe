@@ -77,7 +77,7 @@ function ContactSection() {
                         </div>
                     </Link>
                 </div>
-                <p className='lg:text-center text-justify text-[#FAF8F0]'>Whether you're interested in collaborating on a project, discussing ideas, or just want to connect, I'd love to hear from you! You can reach me through any of the platforms above. Simply click on the icons and get in touch with me. Let's make something amazing happen together!</p>
+                <p className='sm:text-base text-sm lg:text-center text-justify text-[#FAF8F0]'>Whether you're interested in collaborating on a project, discussing ideas, or just want to connect, I'd love to hear from you! You can reach me through any of the platforms above. Simply click on the icons and get in touch with me. Let's make something amazing happen together!</p>
             </div>
         </div>
     </section>

@@ -23,8 +23,8 @@ const SkillsCard: React.FC<CardDetails> = ({ id, title, thumbnail, description, 
       />
     </div>
     {/* Card Content */}
-    <h3 className="text-md font-semibold mb-2">{title}</h3>
-    <p className="text-sm text-justify mb-4 lg:mb-0 flex-grow">{description}</p>
+    <h3 className="sm:text-md text-base font-semibold mb-2">{title}</h3>
+    <p className="sm:text-sm text-xs text-justify mb-4 lg:mb-0 flex-grow">{description}</p>
     
     <button
     className='flex md:mt-auto items-center justify-center rounded-md px-6 py-3 shadow-lg space-x-2 bg-white bg-opacity-5 border-2 border-[#18A4E0] hover:bg-[#18A4E0] text-[#18A4E0] hover:text-[#FAF8F0] transition duration-300 ease-in-out w-full'

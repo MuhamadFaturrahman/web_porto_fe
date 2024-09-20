@@ -27,7 +27,7 @@ const CERTIFICATE_DATA = [
     id: "cert_2",
     title: "Junior Graphic Designer by BNSP",
     thumbnail: image2,
-    description: "Junior Graphic Design certification from BNSP (Badan Nasional Sertifikasi Profesi) Indonesia recognizes foundational skills and knowledge in graphic design.",
+    description: "Junior Graphic Design certification from BNSP (Badan Nasional Sertifikasi Profesi) Indonesia recognizes foundational skills and knowledge in graphic design. It validates competency in visual design, creative processes, and the use of design software and tools.",
   },
   {
     id: "cert_3",
@@ -50,7 +50,7 @@ const TAB_DATA = [
     title: "Technical Expertise",
     id: "technical",
     content: (
-      <ul className='list-disc'>
+      <ul className='list-disc sm:text-base text-sm'>
         <li><span className='font-medium'>Microsoft Office Suite:</span> Proficient in Microsoft Word, Excel, and PowerPoint.</li>
         <li><span className='font-medium'>Programming Languages:</span> Knowledgeable in HTML, CSS, PHP, Dart, Python, C, C++, JavaScript, and Java.</li>
         <li><span className='font-medium'>Frameworks/Libraries:</span> Proficient in Bootstrap, Flutter, CodeIgniter, and React JS.</li>
@@ -64,7 +64,7 @@ const TAB_DATA = [
     title: "Personal Expertise",
     id: "personal",
     content: (
-      <ul className='list-disc'>
+      <ul className='list-disc  sm:text-base text-sm'>
         <li>Leadership Skills</li>
         <li>Effective Communicator</li>
         <li>Quick Learner</li>
@@ -77,6 +77,7 @@ const TAB_DATA = [
 ];
 
 function SkillsSection() {
+  const isSmallScreen = window.innerWidth < 640;
   const [tab, setTab] = useState("technical");
   const [fade, setFade] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -103,7 +104,7 @@ function SkillsSection() {
             The Abilities That Empower My Work
           </h2>
         </div>
-        <p className="text-[#FAF8F0]">
+        <p className="text-[#FAF8F0] text-sm sm:text-base">
           As I journey through the evolving world of technology, I've developed key skills that help me tackle challenges with creativity and precision. Along the way, I’ve earned certifications that validate my expertise and drive my growth. Below is a list of the abilities and certifications that fuel my passion and power my work in tech.
         </p>
         <div className="w-full flex flex-col space-y-2">
@@ -122,8 +123,8 @@ function SkillsSection() {
                 layout
                 initial={false}
                 animate={{
-                  x: TAB_DATA.findIndex((tabs) => tabs.id === tab) * 160, // Adjust the x position based on tab index
-                  width: '165px', // Adjust the width according to tab size
+                  x: TAB_DATA.findIndex((tabs) => tabs.id === tab) * (isSmallScreen ? 145 : 160),
+                  width: isSmallScreen ? '140px' : '165px'
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               />

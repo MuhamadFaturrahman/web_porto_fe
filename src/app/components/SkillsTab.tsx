@@ -14,7 +14,7 @@ const SkillsTab: React.FC<SkillsTabProps> = ({ active, selectTab, label }) => {
   return (
     <button onClick={selectTab}>
       <p
-        className={`mr-3 hover:text-[#18A4E0] duration-300 transition-all ease-in-out ${buttonClasses}`}
+        className={`mr-3 md:text-base text-sm hover:text-[#18A4E0] duration-300 transition-all ease-in-out ${buttonClasses}`}
       >
         {label}
       </p>
