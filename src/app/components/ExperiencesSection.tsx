@@ -5,6 +5,11 @@ import ModalComp from './ModalComp';
 
 function ExperiencesSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const handleOpenModal = (id: string) => {
+    setActiveId(id); // Set the idProps to the clicked button's id
+    setIsModalOpen(true); // Open the modal
+  };
 
   return (
     <section id="experiences">
@@ -16,11 +21,11 @@ function ExperiencesSection() {
           The Journeys That Makes Me A Person
         </h2>
 
-        <ExperiencesDesc openModal={() => setIsModalOpen(true)}/>
+        <ExperiencesDesc openModal={handleOpenModal}/>
 
       </div>
       {isModalOpen && (
-        <ModalComp idProps="pic_1" onClose={() => setIsModalOpen(false)} />
+        <ModalComp idProps={activeId} onClose={() => setIsModalOpen(false)}/>
       )}
     </section>
   )

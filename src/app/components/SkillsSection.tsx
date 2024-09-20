@@ -4,32 +4,42 @@
 import React, { useState } from 'react';
 import SkillsTab from './SkillsTab';
 import { motion } from 'framer-motion';
-import image1 from '../assets/01_pic.jpg';
+import image1 from '../assets/cert_01.png';
+import image2 from '../assets/cert_02.png';
+import image3 from '../assets/cert_03.png';
+import image4 from '../assets/img_others.jpg';
 import SkillsCard from './SkillsCard';
 import { Swiper,SwiperSlide } from 'swiper/react';
 import { Pagination } from "swiper/modules";
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
+import ModalComp from './ModalComp';
 
 const CERTIFICATE_DATA = [
   {
     id: "cert_1",
     title: "ITS Database by Certiport",
-    image: image1,
+    thumbnail: image1,
     description: "The ITS (Information Technology Specialist) Database certification by Certiport is an international credential that verifies advanced proficiency in database management. It covers key areas such as database design, implementation, and administration.",
   },
   {
     id: "cert_2",
     title: "Junior Graphic Designer by BNSP",
-    image: image1,
+    thumbnail: image2,
     description: "Junior Graphic Design certification from BNSP (Badan Nasional Sertifikasi Profesi) Indonesia recognizes foundational skills and knowledge in graphic design. It validates competency in visual design, creative processes, and the use of design software and tools.",
   },
   {
     id: "cert_3",
     title: "PTESOL by UPI Language Center",
-    image: image1,
+    thumbnail: image3,
     description: "The PTESOL (Professional Teaching English to Speakers of Other Languages) certification from UPI Language Center is a national credential that evaluates and certifies one's ability to teach English effectively to non-native speakers.",
+  },
+  {
+    id: "cert_others",
+    title: "Other Certification",
+    thumbnail: image4,
+    description: "Other certification that show improvement and progress of myself",
   },
   
   
@@ -69,6 +79,12 @@ const TAB_DATA = [
 function SkillsSection() {
   const [tab, setTab] = useState("technical");
   const [fade, setFade] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const handleOpenModal = (id: string) => {
+    setActiveId(id); // Set the idProps to the clicked button's id
+    setIsModalOpen(true); // Open the modal
+  };
 
   const handleTabTransition = (id: string) => {
     setFade(false);
@@ -159,12 +175,15 @@ function SkillsSection() {
           
             {CERTIFICATE_DATA.map((data) => (
               <SwiperSlide key={data.title}>
-                <SkillsCard key={data.id} id={data.id} title={data.title} image={data.image} description={data.description} />
+                <SkillsCard key={data.id} id={data.id} title={data.title} thumbnail={data.thumbnail} description={data.description} openModal={handleOpenModal} />
               </SwiperSlide>
             ))}
           
         </Swiper>
       </div>
+      {isModalOpen && (
+        <ModalComp idProps={activeId} onClose={() => setIsModalOpen(false)}/>
+      )}
     </section>
   );
 }
