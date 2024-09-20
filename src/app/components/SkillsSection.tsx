@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SkillsTab from './SkillsTab';
 import { motion } from 'framer-motion';
 import image1 from '../assets/cert_01.png';
@@ -77,15 +77,39 @@ const TAB_DATA = [
 ];
 
 function SkillsSection() {
-  const isSmallScreen = window.innerWidth < 640;
   const [tab, setTab] = useState("technical");
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [fade, setFade] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
   const handleOpenModal = (id: string) => {
     setActiveId(id); // Set the idProps to the clicked button's id
     setIsModalOpen(true); // Open the modal
   };
+
+  useEffect(() => {
+    setIsClient(typeof window !== 'undefined');
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setIsSmallScreen(window.innerWidth < 640);
+      };
+
+      // Set initial value based on current window size
+      handleResize();
+
+      // Add event listener to update on window resize
+      window.addEventListener('resize', handleResize);
+
+      // Clean up event listener
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
 
   const handleTabTransition = (id: string) => {
     setFade(false);
