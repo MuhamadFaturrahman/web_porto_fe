@@ -27,7 +27,7 @@ const CERTIFICATE_DATA = [
     id: "cert_2",
     title: "Junior Graphic Designer by BNSP",
     thumbnail: image2,
-    description: "Junior Graphic Design certification from BNSP (Badan Nasional Sertifikasi Profesi) Indonesia recognizes foundational skills and knowledge in graphic design. It validates competency in visual design, creative processes, and the use of design software and tools.",
+    description: "Junior Graphic Design certification from BNSP (Badan Nasional Sertifikasi Profesi) Indonesia recognizes foundational skills and knowledge in graphic design.",
   },
   {
     id: "cert_3",
