@@ -93,7 +93,7 @@ function SkillsSection() {
     setIsClient(typeof window !== 'undefined');
     if (typeof window !== 'undefined') {
       const handleResize = () => {
-        setIsSmallScreen(window.innerWidth < 640);
+        setIsSmallScreen(window.innerWidth < 450);
       };
 
       // Set initial value based on current window size
@@ -147,8 +147,8 @@ function SkillsSection() {
                 layout
                 initial={false}
                 animate={{
-                  x: TAB_DATA.findIndex((tabs) => tabs.id === tab) * (isSmallScreen ? 145 : 160),
-                  width: isSmallScreen ? '140px' : '165px'
+                  x: TAB_DATA.findIndex((tabs) => tabs.id === tab) * (isSmallScreen ? 115 : 160),
+                  width: isSmallScreen ? '120px' : '165px'
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               />
