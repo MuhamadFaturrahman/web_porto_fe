@@ -76,6 +76,21 @@ const HeaderSection = () => {
                     </button>
 
                     <button
+                        onClick={() =>
+                        window.open(
+                            'https://drive.google.com/file/d/1TyFwL4TLuVoYAizRRvB5RFTOBURzfqSF/view?usp=drive_link',
+                            '_blank'
+                        )
+                        }
+                        className="group rounded-md mb-3 lg:mb-0 px-6 py-3 bg-white bg-opacity-5 shadow-lg border-2 border-[#18A4E0] hover:bg-[#18A4E0] hover:text-[#FAF8F0] transition duration-300 ease-in-out w-full sm:w-fit"
+                    >
+                        Download Portofolio{' '}
+                        <span className="font-light text-xs text-[#18A4E0] group-hover:text-[#FAF8F0] transition-colors duration-300 ease-in-out italic">
+                        [PDF]
+                        </span>
+                    </button>
+
+                    <button
                         onClick={() => handleScroll('contact')}
                         className="flex items-center justify-center space-x-2 rounded-md px-6 py-3 shadow-lg bg-gradient-to-br from-slate-50 to-[#b7ccd5] text-[#033252] font-medium hover:from-[#18A4E0] hover:to-[#18A4E0] hover:text-[#FAF8F0] transition duration-300 ease-in-out w-full sm:w-fit"
                     >
