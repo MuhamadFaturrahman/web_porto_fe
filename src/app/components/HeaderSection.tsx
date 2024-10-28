@@ -48,7 +48,7 @@ const HeaderSection = () => {
                     <button
                         onClick={() =>
                         window.open(
-                            'https://drive.google.com/file/d/1x3PSY3537sVz0S5KE7R-CGf0D41zEg_6/view?usp=sharing',
+                            'https://drive.google.com/drive/folders/1IdPY5xB9TNcZwlWmq6OXAAoLgjuIHxCI?usp=drive_link',
                             '_blank'
                         )
                         }
@@ -56,29 +56,14 @@ const HeaderSection = () => {
                     >
                         Download CV{' '}
                         <span className="font-light text-xs text-[#18A4E0] group-hover:text-[#FAF8F0] transition-colors duration-300 ease-in-out italic">
-                        [Indonesia]
+                        [PDF]
                         </span>
                     </button>
 
                     <button
                         onClick={() =>
                         window.open(
-                            'https://drive.google.com/file/d/1Y6DPyHPk4DGEw7KonNKraSIpUW-vhBRb/view?usp=sharing',
-                            '_blank'
-                        )
-                        }
-                        className="group rounded-md mb-3 lg:mb-0 px-6 py-3 bg-white bg-opacity-5 shadow-lg border-2 border-[#18A4E0] hover:bg-[#18A4E0] hover:text-[#FAF8F0] transition duration-300 ease-in-out w-full sm:w-fit"
-                    >
-                        Download CV{' '}
-                        <span className="font-light text-xs text-[#18A4E0] group-hover:text-[#FAF8F0] transition-colors duration-300 ease-in-out italic">
-                        [English]
-                        </span>
-                    </button>
-
-                    <button
-                        onClick={() =>
-                        window.open(
-                            'https://drive.google.com/file/d/1TyFwL4TLuVoYAizRRvB5RFTOBURzfqSF/view?usp=drive_link',
+                            'https://drive.google.com/drive/folders/1Fpkpr7ktoTu3UYZF3TDZE-c_-mup7Xqo?usp=drive_link',
                             '_blank'
                         )
                         }
